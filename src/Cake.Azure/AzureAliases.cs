@@ -8,6 +8,7 @@ namespace Cake.Azure
     /// <summary>
     /// Contains Cake aliases for running Azure commands.
     /// </summary>
+    [CakeAliasCategory("Azure")]
     public static class AzureAliases
     {
         /// <summary>
