@@ -12,16 +12,9 @@
     <PackageTags>Cake Script Azure</PackageTags>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile></DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard1.6\Cake.Azure.xml</DocumentationFile>
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.18.0" />
+    <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="1.5.0-preview" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication" Version="2.2.12" />
   </ItemGroup>
 </Project>

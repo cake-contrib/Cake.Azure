@@ -6,10 +6,10 @@ using Microsoft.Rest.Azure.Authentication;
 namespace Cake.Azure
 {
     /// <summary>
-    /// Contains Cake aliases for running Azure commands.
+    /// Contains Cake aliases for running Azure login commands.
     /// </summary>
     [CakeAliasCategory("Azure")]
-    public static class AzureAliases
+    public static class AzureLoginAliases
     {
         /// <summary>
         /// Authenticates into Azure as a service principal with a password.
