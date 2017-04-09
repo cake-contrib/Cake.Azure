@@ -10,6 +10,8 @@
     <Copyright>Copyright 2017 (c). All rights reserved.</Copyright>
     <PackageTags>Cake Script Azure</PackageTags>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <PackageProjectUrl>https://github.com/DixonDs/Cake.Azure</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DixonDs/Cake.Azure</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
