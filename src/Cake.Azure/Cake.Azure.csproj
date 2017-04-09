@@ -16,6 +16,7 @@
     <PackageReference Include="Cake.Core" Version="0.18.0" />
     <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="1.5.0-preview" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication" Version="2.2.12" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\AssemblyVersionInfo.cs" />
