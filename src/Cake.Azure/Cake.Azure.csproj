@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.6;net45</TargetFrameworks>
+    <TargetFramework>net45</TargetFramework>
     <PackageId>Cake.Azure</PackageId>
     <Authors>Dmytro Dziuma</Authors>
     <Description>Cake addin for Azure management.</Description>
