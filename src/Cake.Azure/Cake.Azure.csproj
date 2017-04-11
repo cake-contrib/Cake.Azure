@@ -16,11 +16,23 @@
 
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.18.0" />
-    <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="1.5.0-preview" />
-    <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication" Version="2.2.12" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.2" />
+    <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="1.5.0-preview">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication" Version="2.2.12">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.2">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\..\AssemblyVersionInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Release\net45\*.dll" Exclude="bin\Release\net45\Cake.Core.dll">
+      <Pack>true</Pack>
+      <PackagePath>lib\net45</PackagePath>
+    </Content>
   </ItemGroup>
 </Project>
