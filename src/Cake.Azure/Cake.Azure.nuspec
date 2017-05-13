@@ -12,9 +12,6 @@
     <copyright>Copyright 2017 (c). All rights reserved.</copyright>
     <tags>Cake Script Azure</tags>
     <dependencies>
-      <group targetFramework=".NETFramework4.5">
-        <dependency id="Cake.Core" version="0.18.0" exclude="Build,Analyzers" />
-      </group>
     </dependencies>
   </metadata>
   <files>
