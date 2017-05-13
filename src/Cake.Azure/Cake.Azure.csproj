@@ -30,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Cake.Azure.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Cake.Core, Version=0.19.5.0, Culture=neutral, processorArchitecture=MSIL">

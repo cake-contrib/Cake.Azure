@@ -13,11 +13,12 @@
     <tags>Cake Script Azure</tags>
     <dependencies>
       <group targetFramework=".NETFramework4.5">
-        <dependency id="Cake.Core" version="0.18.0" exclude="Build,Analyzers"/>
+        <dependency id="Cake.Core" version="0.18.0" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>
-   <files>
-  <file src="Cake.Azure.dll" target="lib\net45" />
+  <files>
+    <file src="Cake.Azure.dll" target="lib\net45" />
+    <file src="Cake.Azure.xml" target="lib\net45" />
   </files>
 </package>
