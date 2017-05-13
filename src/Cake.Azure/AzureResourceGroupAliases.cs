@@ -3,7 +3,7 @@ using Cake.Core.Annotations;
 using Cake.Core.Diagnostics;
 using Microsoft.Azure.Management.ResourceManager;
 using Microsoft.Azure.Management.ResourceManager.Models;
-using Microsoft.Rest;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Cake.Azure
@@ -24,7 +24,7 @@ namespace Cake.Azure
         /// <returns><code>true</code>, if a resource group exists; <code>false</code>, otherwise.</returns>
         [CakeAliasCategory("ResourceGroup")]
         [CakeMethodAlias]
-        public static bool AzureResourceGroupExists(this ICakeContext context, ServiceClientCredentials credentials,
+        public static bool AzureResourceGroupExists(this ICakeContext context, Credentials credentials,
             string subscriptionId, string resourceGroupName)
         {
             var client = GetClient(credentials, subscriptionId);
@@ -42,7 +42,7 @@ namespace Cake.Azure
         /// <param name="resourceGroupLocation">The resource group location.</param>
         [CakeAliasCategory("ResourceGroup")]
         [CakeMethodAlias]
-        public static void EnsureResourceGroupExists(this ICakeContext context, ServiceClientCredentials credentials,
+        public static void EnsureAzureResourceGroupExists(this ICakeContext context, Credentials credentials,
             string subscriptionId, string resourceGroupName, string resourceGroupLocation)
         {
             var client = GetClient(credentials, subscriptionId);
@@ -71,7 +71,7 @@ namespace Cake.Azure
         /// <param name="resourceGroupName">The resource group name.</param>
         [CakeAliasCategory("ResourceGroup")]
         [CakeMethodAlias]
-        public static void DeleteAzureResouceGroup(this ICakeContext context, ServiceClientCredentials credentials,
+        public static void DeleteAzureResourceGroup(this ICakeContext context, Credentials credentials,
             string subscriptionId, string resourceGroupName)
         {
             var client = GetClient(credentials, subscriptionId);
@@ -101,20 +101,21 @@ namespace Cake.Azure
         /// <returns>The outputs from the ARM template deployment.</returns>
         [CakeAliasCategory("ResourceGroup")]
         [CakeMethodAlias]
-        public static JObject DeployAzureResouceGroup(this ICakeContext context, ServiceClientCredentials credentials,
-            string subscriptionId, string resourceGroupName, string deploymentName, JObject template,
-            JObject parameters)
+        public static string DeployAzureResourceGroup(this ICakeContext context, Credentials credentials,
+            string subscriptionId, string resourceGroupName, string deploymentName, string template,
+            string parameters)
         {
             var client = GetClient(credentials, subscriptionId);
 
             context.Log.Information($"Starting template deployment '{deploymentName}' in resource group '{resourceGroupName}'");
+            dynamic parametersObject = JsonConvert.DeserializeObject(parameters);
             var deployment = new Deployment
             {
                 Properties = new DeploymentProperties
                 {
                     Mode = DeploymentMode.Incremental,
-                    Template = template,
-                    Parameters = parameters["parameters"].ToObject<JObject>()
+                    Template = JsonConvert.DeserializeObject(template),
+                    Parameters = parametersObject["parameters"].ToObject<JObject>()
                 }
             };
 
@@ -123,12 +124,12 @@ namespace Cake.Azure
 
             context.Log.Information($"Deployment status: {deploymentResult.Properties.ProvisioningState}");
 
-            return deploymentResult.Properties.Outputs as JObject;
+            return JsonConvert.SerializeObject(deploymentResult.Properties.Outputs);
         }
 
-        private static ResourceManagementClient GetClient(ServiceClientCredentials credentials, string subscriptionId)
+        private static ResourceManagementClient GetClient(Credentials credentials, string subscriptionId)
         {
-            return new ResourceManagementClient(credentials)
+            return new ResourceManagementClient(credentials.ServiceClientCredentials)
             {
                 SubscriptionId = subscriptionId
             };

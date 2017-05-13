@@ -1,6 +1,5 @@
 ﻿using Cake.Core;
 using Cake.Core.Annotations;
-using Microsoft.Rest;
 using Microsoft.Rest.Azure.Authentication;
 
 namespace Cake.Azure
@@ -21,11 +20,11 @@ namespace Cake.Azure
         /// <returns>Azure credendials.</returns>
         [CakeAliasCategory("Login")]
         [CakeMethodAlias]
-        public static ServiceClientCredentials AzureLogin(this ICakeContext context, string tenantId,
+        public static Credentials AzureLogin(this ICakeContext context, string tenantId,
             string applicationId, string password)
         {
-            return ApplicationTokenProvider.LoginSilentAsync(tenantId, applicationId, password).GetAwaiter()
-                .GetResult();
+            return new Credentials(ApplicationTokenProvider.LoginSilentAsync(tenantId, applicationId, password)
+                .GetAwaiter().GetResult());
         }
 
         /// <summary>
@@ -39,11 +38,11 @@ namespace Cake.Azure
         /// <returns>Azure credendials.</returns>
         [CakeAliasCategory("Login")]
         [CakeMethodAlias]
-        public static ServiceClientCredentials AzureLogin(this ICakeContext context, string tenantId,
+        public static Credentials AzureLogin(this ICakeContext context, string tenantId,
             string applicationId, byte[] certificate, string password)
         {
-            return ApplicationTokenProvider.LoginSilentAsync(tenantId, applicationId, certificate, password)
-                .GetAwaiter().GetResult();
+            return new Credentials(ApplicationTokenProvider.LoginSilentAsync(tenantId, applicationId, certificate,
+                password).GetAwaiter().GetResult());
         }
     }
 }

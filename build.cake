@@ -1,3 +1,5 @@
+#tool "nuget:?package=ilmerge"
+
 #load "parameters.cake"
 
 var parameters = BuildParameters.GetParameters(Context);
@@ -17,12 +19,12 @@ Task("Restore-NuGet-Packages")
 Task("Create-Version-Info")
     .Does(() =>
 {
-    CreateAssemblyInfo(File("AssemblyVersionInfo.cs"), new AssemblyInfoSettings 
-	{
-		Version = parameters.Version,
-		FileVersion = parameters.Version,
-		InformationalVersion = parameters.FullVersion
-	});
+    CreateAssemblyInfo(File("AssemblyVersionInfo.cs"), new AssemblyInfoSettings
+    {
+        Version = parameters.Version,
+        FileVersion = parameters.Version,
+        InformationalVersion = parameters.FullVersion
+    });
 });
 
 Task("Build")
@@ -37,21 +39,32 @@ Task("Build")
         .SetConfiguration(parameters.SolutionBuildConfiguration)
         .WithTarget("build")
     );
+    var buildPath = "src/Cake.Azure/bin/" + parameters.SolutionBuildConfiguration + "/";
+
+    DeleteFile(buildPath + "Cake.Azure.pdb");
+
+    var assemblyPaths = GetFiles(buildPath + "*.dll").Where(f => !f.GetFilename().ToString().StartsWith("Cake."));
+    ILMerge(
+        buildPath + "Cake.Azure.dll",
+        buildPath + "Cake.Azure.dll",
+        assemblyPaths,
+        new ILMergeSettings { Internalize = true }
+    );
 });
 
 Task("Pack")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    MSBuild("src/Cake.Azure/Cake.Azure.csproj", new MSBuildSettings
-        {
-            ToolPath = parameters.MSBuildPath
-        }
-        .SetConfiguration(parameters.SolutionBuildConfiguration)
-        .WithTarget("pack")
-        .WithProperty("PackageVersion", new[]{ parameters.Version })
-        .WithProperty("PackageOutputPath", new[]{ MakeAbsolute(Directory("build")).FullPath })
-    );
+    var buildPath = "src/Cake.Azure/bin/" + parameters.SolutionBuildConfiguration;
+
+    var settings = new NuGetPackSettings()
+    {
+        Version = parameters.Version,
+        BasePath = buildPath,
+        OutputDirectory = "build"
+    };
+    NuGetPack("src/Cake.Azure/Cake.Azure.nuspec", settings);
 });
 
 Task("Default")
