@@ -7,13 +7,7 @@ var parameters = BuildParameters.GetParameters(Context);
 Task("Restore-NuGet-Packages")
     .Does(() =>
 {
-    MSBuild("src/Cake.Azure.sln", new MSBuildSettings
-        {
-            ToolPath = parameters.MSBuildPath
-        }
-        .SetConfiguration(parameters.SolutionBuildConfiguration)
-        .WithTarget("restore")
-    );
+    NuGetRestore("src/Cake.Azure.sln");
 });
 
 Task("Create-Version-Info")
