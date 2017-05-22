@@ -1,2 +1,14 @@
 # Cake.Azure
-Cake plugin to manage Azure resources
+A [Cake](http://cakebuild.net) plugin for managing Azure resources.
+
+You can reference Cake.Azure directly in your build script as a Cake addin:
+
+```csharp
+#addin "Cake.Azure"
+```
+
+## Aliases
+
+Please visit the Cake Documentation for a list of available aliases:
+
+[http://cakebuild.net/dsl/azure/](http://cakebuild.net/dsl/azure)
