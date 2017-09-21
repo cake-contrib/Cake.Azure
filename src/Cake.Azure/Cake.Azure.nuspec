@@ -9,14 +9,14 @@
     <projectUrl>https://github.com/DixonDs/Cake.Azure</projectUrl>
     <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
     <description>Cake addin for Azure management.</description>
-    <releaseNotes>First release</releaseNotes>
+    <releaseNotes>Updated to Cake.Core 0.22.2</releaseNotes>
     <copyright>Copyright 2017 (c). All rights reserved.</copyright>
     <tags>Cake Script Azure</tags>
     <dependencies>
     </dependencies>
   </metadata>
   <files>
-    <file src="Cake.Azure.dll" target="lib\net45" />
-    <file src="Cake.Azure.xml" target="lib\net45" />
+    <file src="Cake.Azure.dll" target="lib\net46" />
+    <file src="Cake.Azure.xml" target="lib\net46" />
   </files>
 </package>
