@@ -13,6 +13,8 @@ public class BuildParameters
 
     public string FullVersion { get; private set; }
 
+    public string AssemblyVersion { get; private set; }
+
     public FilePath MSBuildPath {get; private set;}
 
     public static BuildParameters GetParameters(ICakeContext context)
@@ -61,7 +63,8 @@ public class BuildParameters
             SolutionBuildConfiguration = solutionBuildConfiguration,
             MSBuildPath = msBuildPath,
             FullVersion = gitVersion.FullSemVer,
-            Version = gitVersion.SemVer
+            Version = gitVersion.SemVer,
+            AssemblyVersion = gitVersion.AssemblySemVer
         };
     }
 }

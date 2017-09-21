@@ -15,8 +15,8 @@ Task("Create-Version-Info")
 {
     CreateAssemblyInfo(File("AssemblyVersionInfo.cs"), new AssemblyInfoSettings
     {
-        Version = parameters.Version,
-        FileVersion = parameters.Version,
+        Version = parameters.AssemblyVersion,
+        FileVersion = parameters.AssemblyVersion,
         InformationalVersion = parameters.FullVersion
     });
 });
