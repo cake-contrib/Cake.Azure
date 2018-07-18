@@ -10,7 +10,7 @@
     <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
     <description>Cake addin for Azure management.</description>
     <releaseNotes>Updated to Cake.Core 0.28.0</releaseNotes>
-    <copyright>Copyright 2017 (c). All rights reserved.</copyright>
+    <copyright>Copyright 2018 (c). All rights reserved.</copyright>
     <tags>Cake Script Azure</tags>
     <dependencies>
     </dependencies>
