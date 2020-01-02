@@ -1,6 +1,6 @@
 ﻿using Microsoft.Rest;
 
-namespace Cake.Azure
+namespace Cake.AzureZ
 {
     public class Credentials
     {

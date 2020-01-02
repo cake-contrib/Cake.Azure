@@ -6,7 +6,7 @@ using Microsoft.Azure.Management.ResourceManager.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Cake.Azure
+namespace Cake.AzureZ
 {
     /// <summary>
     /// Contains Cake aliases for running commands managing Azure resource groups.

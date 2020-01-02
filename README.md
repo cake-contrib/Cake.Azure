@@ -1,10 +1,10 @@
-# Cake.Azure
+# Cake.AzureZ
 A [Cake](http://cakebuild.net) plugin for managing Azure resources.
 
 You can reference Cake.Azure directly in your build script as a Cake addin:
 
 ```csharp
-#addin "Cake.Azure"
+#addin "Cake.AzureZ"
 ```
 
 ## Aliases

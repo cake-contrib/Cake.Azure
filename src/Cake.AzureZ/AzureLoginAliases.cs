@@ -2,7 +2,7 @@
 using Cake.Core.Annotations;
 using Microsoft.Rest.Azure.Authentication;
 
-namespace Cake.Azure
+namespace Cake.AzureZ
 {
     /// <summary>
     /// Contains Cake aliases for running Azure login commands.
