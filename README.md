@@ -1,10 +1,15 @@
 # Cake.AzureZ
 A [Cake](http://cakebuild.net) plugin for managing Azure resources.
 
-You can reference Cake.Azure directly in your build script as a Cake addin:
+Usage:
 
 ```csharp
-#addin "Cake.AzureZ"
+#addin "nuget:?package=Microsoft.Rest.ClientRuntime&version=2.3.21"
+#addin "nuget:?package=Microsoft.Rest.ClientRuntime.Azure.Authentication&version=2.4.0"
+#addin "nuget:?package=Microsoft.IdentityModel.Clients.ActiveDirectory&version=4.3.0"
+#addin "nuget:?package=Microsoft.Azure.Management.ResourceManager&version=2.4.5-preview&prerelease"
+#addin "nuget:?package=Microsoft.Rest.ClientRuntime.Azure&version=3.3.19"
+#addin "nuget:?package=Cake.AzureZ&version=0.4.1"
 ```
 
 ## Aliases

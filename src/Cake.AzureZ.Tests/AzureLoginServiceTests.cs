@@ -1,5 +1,5 @@
-using Cake.AzureZ;
 using NUnit.Framework;
+using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
 namespace Cake.AzureZ.Tests
 {
@@ -8,13 +8,9 @@ namespace Cake.AzureZ.Tests
         [Test]
         public void AzureLogin_ShouldAttemptToLogin_WhenAccessedCorrectlyWithoutACertificate()
         {
-            AzureLoginService.AzureLogin("a", "b", "c");
-        }
-
-        [Test]
-        public void AzureLogin_ShouldAttemptToLogin_WhenAccessedCorrectlyWithACertificate()
-        {
-            AzureLoginService.AzureLogin("a", "b", new byte[0], "c");
+            Assert.Throws<AdalServiceException>(() => {
+                AzureLoginService.AzureLogin("a", "b", "c");
+            });
         }
     }
 }

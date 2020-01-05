@@ -13,9 +13,10 @@
 
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.35.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="2.4.5-preview" PrivateAssets="All" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication" Version="2.4.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="2.4.5-preview" />
+    <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.21" />
+    <PackageReference Include="Microsoft.Rest.ClientRuntime.Azure.Authentication" Version="2.4.0" />
   </ItemGroup>
 
 </Project>
