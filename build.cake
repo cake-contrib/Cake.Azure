@@ -12,8 +12,15 @@ Task("Build")
 	});
 });
 
+Task("Unit-Test")
+	.IsDependentOn("Build")
+    .Does(() =>
+{
+    DotNetCoreTest("src/Cake.AzureZ.sln");
+});
+
 Task("Pack")
-    .IsDependentOn("Build")
+    .IsDependentOn("Unit-Test")
     .Does(() =>
 {
 	DotNetCorePack("src/Cake.AzureZ.sln", new DotNetCorePackSettings

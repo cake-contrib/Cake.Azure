@@ -1,6 +1,5 @@
 ﻿using Cake.Core;
 using Cake.Core.Annotations;
-using Microsoft.Rest.Azure.Authentication;
 
 namespace Cake.AzureZ
 {
@@ -23,8 +22,7 @@ namespace Cake.AzureZ
         public static Credentials AzureLogin(this ICakeContext context, string tenantId,
             string applicationId, string password)
         {
-            return new Credentials(ApplicationTokenProvider.LoginSilentAsync(tenantId, applicationId, password)
-                .GetAwaiter().GetResult());
+            return AzureLoginService.AzureLogin(tenantId, applicationId, password);
         }
 
         /// <summary>
@@ -41,8 +39,7 @@ namespace Cake.AzureZ
         public static Credentials AzureLogin(this ICakeContext context, string tenantId,
             string applicationId, byte[] certificate, string password)
         {
-            return new Credentials(ApplicationTokenProvider.LoginSilentAsync(tenantId, applicationId, certificate,
-                password).GetAwaiter().GetResult());
+            return AzureLoginService.AzureLogin(tenantId, applicationId, certificate, password);
         }
     }
 }
