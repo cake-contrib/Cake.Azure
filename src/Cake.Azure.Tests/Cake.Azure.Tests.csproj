@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Cake.AzureZ\Cake.AzureZ.csproj" />
+    <ProjectReference Include="..\Cake.Azure\Cake.Azure.csproj" />
   </ItemGroup>
 
 </Project>

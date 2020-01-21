@@ -1,7 +1,7 @@
 ﻿using Cake.Core;
 using Cake.Core.Annotations;
 
-namespace Cake.AzureZ
+namespace Cake.Azure
 {
     /// <summary>
     /// Contains Cake aliases for running commands managing Azure resource groups.

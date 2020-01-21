@@ -10,9 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\parameters.cake = ..\parameters.cake
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.AzureZ", "Cake.AzureZ\Cake.AzureZ.csproj", "{3845815A-8191-422E-B930-0906D8CA49EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Azure", "Cake.Azure\Cake.Azure.csproj", "{3845815A-8191-422E-B930-0906D8CA49EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.AzureZ.Tests", "Cake.AzureZ.Tests\Cake.AzureZ.Tests.csproj", "{B173EDEE-10D0-4601-81F5-CA12633CD4BA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cake.Azure.Tests", "Cake.Azure.Tests\Cake.Azure.Tests.csproj", "{B173EDEE-10D0-4601-81F5-CA12633CD4BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

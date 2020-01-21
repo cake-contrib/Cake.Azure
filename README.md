@@ -1,4 +1,4 @@
-# Cake.AzureZ
+# Cake.Azure
 A [Cake](http://cakebuild.net) plugin for managing Azure resources.
 
 Usage:
@@ -9,7 +9,7 @@ Usage:
 #addin "nuget:?package=Microsoft.IdentityModel.Clients.ActiveDirectory&version=4.3.0"
 #addin "nuget:?package=Microsoft.Azure.Management.ResourceManager&version=2.4.5-preview&prerelease"
 #addin "nuget:?package=Microsoft.Rest.ClientRuntime.Azure&version=3.3.19"
-#addin "nuget:?package=Cake.AzureZ&version=0.4.1"
+#addin "nuget:?package=Cake.Azure&version=0.4.0"
 ```
 
 ## Aliases

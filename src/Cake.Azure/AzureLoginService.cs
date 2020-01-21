@@ -1,6 +1,6 @@
 using Microsoft.Rest.Azure.Authentication;
 
-namespace Cake.AzureZ
+namespace Cake.Azure
 {
     public static class AzureLoginService
     {
