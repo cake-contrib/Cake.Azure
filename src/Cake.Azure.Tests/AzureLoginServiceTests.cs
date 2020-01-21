@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using Microsoft.IdentityModel.Clients.ActiveDirectory;
 
-namespace Cake.AzureZ.Tests
+namespace Cake.Azure.Tests
 {
     public class AzureLoginServiceTests
     {

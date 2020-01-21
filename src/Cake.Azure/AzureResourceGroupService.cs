@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Cake.Core.Diagnostics;
 
-namespace Cake.AzureZ
+namespace Cake.Azure
 {
     public static class AzureResourceGroupService
     {
