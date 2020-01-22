@@ -1,7 +1,6 @@
-#tool "nuget:?package=GitVersion.CommandLine"
-#tool "nuget:?package=vswhere"
+#tool "nuget:?package=GitVersion.CommandLine&version=4.0.0"
 
-#addin "Cake.Git"
+#addin "nuget:?package=Cake.Git&version=0.21.0"
 
 public class BuildParameters
 {
@@ -15,8 +14,6 @@ public class BuildParameters
 
     public string AssemblyVersion { get; private set; }
 
-    public FilePath MSBuildPath {get; private set;}
-
     public static BuildParameters GetParameters(ICakeContext context)
     {
         if (context == null)
@@ -26,13 +23,6 @@ public class BuildParameters
 
         var target = context.Argument("target", "Default");
         var solutionBuildConfiguration = context.Argument("SolutionBuildConfiguration", "Release");
-
-        var vsLatest = context.VSWhereLatest();
-        if (vsLatest == null)
-        {
-            throw new InvalidOperationException("MSBuild not found.");
-        }
-        var msBuildPath = vsLatest.CombineWithFilePath("./MSBuild/15.0/Bin/amd64/MSBuild.exe");
 
         var logFilePath = context.MakeAbsolute(context.File("gitVersion.log")).FullPath;
         var gitVersionSettings = new GitVersionSettings
@@ -61,7 +51,6 @@ public class BuildParameters
         {
             Target = target,
             SolutionBuildConfiguration = solutionBuildConfiguration,
-            MSBuildPath = msBuildPath,
             FullVersion = gitVersion.FullSemVer,
             Version = gitVersion.SemVer,
             AssemblyVersion = gitVersion.AssemblySemVer
