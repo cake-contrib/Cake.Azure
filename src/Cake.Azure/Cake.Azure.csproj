@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Description>Cake addin for Azure management.</Description>
-    <Authors>Zachary L. Beer</Authors>
+    <Authors>Zachary L. Beer;Dmytro Dziuma;cake-contrib</Authors>
     <PackageProjectUrl>https://github.com/cake-contrib/Cake.Azure</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cake-contrib/Cake.Azure</RepositoryUrl>
     <PackageTags>Cake;Script;Azure</PackageTags>
