@@ -9,7 +9,6 @@ BuildParameters.SetParameters(context: Context,
                             repositoryOwner: "cake-contrib",
                             repositoryName: "Cake.Azure",
                             appVeyorAccountName: "cakecontrib",
-                            shouldCalculateVersion: true,
                             shouldRunDotNetCorePack: true);
 
 BuildParameters.PrintParameters(Context);
