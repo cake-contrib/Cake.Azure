@@ -10,11 +10,11 @@
     <PackageTags>Cake;Script;Azure</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>https://cdn.jsdelivr.net/gh/cake-contrib/graphics@49c3b71def749b86416d773f1ead0c0da2d590ea/png/cake-contrib-medium.png</PackageIconUrl>
-    <PackageReleaseNotes>Updated to .NET 6.0 and Cake.Core 3.0.0</PackageReleaseNotes>
+    <PackageReleaseNotes>Updated to .NET 6.0 and Cake.Core 1.3.0</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="3.0.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Core" Version="1.3.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Azure.Management.ResourceManager" Version="2.4.5-preview" />
     <PackageReference Include="Microsoft.Rest.ClientRuntime" Version="2.3.21" />
